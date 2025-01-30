@@ -60,6 +60,31 @@ export const twMergeConfig: Parameters<
     },
     classGroups: {
       'font-family': ['font-iranSansX'],
+      'font-size': [
+        {
+          text: [
+            'display-1',
+            'display-2',
+            'heading-1',
+            'heading-2',
+            'heading-3',
+            'heading-4',
+            'heading-5',
+            'heading-6',
+            'body-1',
+            'body-2',
+            'body-3',
+            'body-4',
+            'body-5',
+            'caption-1',
+            'caption-2',
+            'button-1',
+            'button-2',
+            'overline-1',
+            'overline-2',
+          ],
+        },
+      ],
     },
   },
 };
