@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary-50-hsl: 226 89% 96%;
+    --color-primary-100-hsl: 228 90% 89%;
+    --color-primary-200-hsl: 228 89% 83%;
+    --color-primary-300-hsl: 228 89% 75%;
+    --color-primary-400-hsl: 228 89% 70%;
+    --color-primary-500-hsl: 228 89% 63%;
+    --color-primary-600-hsl: 228 71% 57%;
+    --color-primary-700-hsl: 228 53% 45%;
+    --color-primary-800-hsl: 228 53% 35%;
+    --color-primary-900-hsl: 228 53% 26%;
+    --color-primary-950-hsl: 228 53% 15%;
+
+    --color-neutral-black-hsl: 0 0% 5%;
+    --color-neutral-gray-1-hsl: 0 0% 25%;
+    --color-neutral-gray-2-hsl: 0 0% 38%;
+    --color-neutral-gray-3-hsl: 0 0% 46%;
+    --color-neutral-gray-4-hsl: 0 0% 53%;
+    --color-neutral-gray-5-hsl: 0 0% 53%;
+    --color-neutral-gray-6-hsl: 0 0% 80%;
+    --color-neutral-gray-7-hsl: 0 0% 87%;
+    --color-neutral-gray-8-hsl: 30 3% 89%;
+    --color-neutral-gray-9-hsl: 0 0% 93%;
+    --color-neutral-gray-10-hsl: 0 0% 96%;
+    --color-neutral-gray-11-hsl: 0 0% 98%;
+    --color-neutral-white-hsl: 0 0% 100%;
+
+    --color-state-error-1-hsl: 0 58% 43%;
+    --color-state-error-2-hsl: 0 100% 96%;
+    --color-state-success-1-hsl: 150 100% 32%;
+    --color-state-success-2-hsl: 142 100% 96%;
+    --color-state-info-1-hsl: 216 98% 52%;
+    --color-state-info-2-hsl: 221 100% 98%;
+    --color-state-warning-1-hsl: 44 97% 37%;
+    --color-state-warning-2-hsl: 48 100% 96%;
+    --color-state-chart-hsl: 188 82% 52%;
+  }
+}
