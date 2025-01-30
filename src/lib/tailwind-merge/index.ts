@@ -87,6 +87,11 @@ export const twMergeConfig: Parameters<
       ],
     },
   },
+  extend: {
+    classGroups: {
+      shadow: [{ shadow: [''] }],
+    },
+  },
 };
 
 export const twMerge = extendTailwindMerge(twMergeConfig);

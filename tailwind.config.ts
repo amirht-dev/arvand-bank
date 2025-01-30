@@ -85,7 +85,11 @@ export default {
       'overline-1': ['16px', { fontWeight: '400', lineHeight: '140%' }],
       'overline-2': ['12px', { fontWeight: '600', lineHeight: '140%' }],
     },
-    extend: {},
+    extend: {
+      boxShadow: {
+        DEFAULT: '0px 4px 5px -2px rgba(0, 0, 0, 0.03)',
+      },
+    },
   },
   plugins: [tailwindAnimate],
 } satisfies Config;
