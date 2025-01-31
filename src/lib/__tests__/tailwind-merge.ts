@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { twMerge } from '.';
+import { twMerge } from '../tailwind-merge';
 
 describe('tailwind-merge', () => {
   describe('colors', () => {
