@@ -17,7 +17,10 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <div className={`${iranSansX.variable} font-iranSansX antialiased`}>
+      <div
+        dir="rtl "
+        className={`${iranSansX.variable} font-iranSansX antialiased`}
+      >
         {Story()}
       </div>
     ),
