@@ -125,4 +125,57 @@
       }
     }
   }
+
+  .icon-btn {
+    --icon-btn-bg: theme(colors.neutral.white);
+    @apply rounded-lg bg-[--icon-btn-bg] p-3 text-neutral-gray-1 transition-colors;
+
+    &:hover:not(:disabled) {
+      @apply text-primary-600;
+    }
+
+    &:focus:not(:disabled) {
+      --icon-btn-bg: theme(colors.primary.50);
+      @apply text-primary-700;
+    }
+
+    &:disabled {
+      --icon-btn-bg: theme(colors.neutral.gray.9);
+      @apply cursor-not-allowed text-neutral-gray-4;
+    }
+
+    &--size {
+      &-md {
+        & .icon-btn__icon {
+          @apply size-6;
+        }
+        & .icon-btn__badge {
+          @apply right-[14px] top-[12px];
+        }
+      }
+      &-lg {
+        & .icon-btn__icon {
+          @apply size-8;
+        }
+        & .icon-btn__badge {
+          @apply right-[16px] top-[14px];
+        }
+      }
+    }
+
+    &__badge {
+      @apply absolute size-2.5 rounded-full;
+
+      .icon-btn:has(&) {
+        @apply relative;
+      }
+
+      & circle:first-child {
+        @apply fill-[--icon-btn-bg] transition-colors;
+      }
+      & circle:last-child {
+        @apply fill-state-error-1;
+      }
+    }
+  }
 }
