@@ -178,4 +178,84 @@
       }
     }
   }
+
+  .input {
+    &__container {
+      @apply rounded-lg border border-neutral-gray-7 bg-neutral-white transition-colors;
+
+      &:focus-within {
+        @apply border-primary-600;
+
+        & .input__icon {
+          @apply text-primary-600;
+        }
+      }
+
+      &:has(input:disabled) {
+        @apply cursor-not-allowed border-transparent bg-neutral-gray-9;
+
+        * {
+          @apply cursor-not-allowed;
+        }
+
+        & .input__icon {
+          @apply text-neutral-gray-4;
+        }
+      }
+    }
+
+    &__element {
+      @apply w-full flex-1 border-none bg-transparent text-caption-1 text-neutral-gray-1 outline-none;
+
+      &::placeholder {
+        @apply text-neutral-gray-6;
+      }
+
+      &:disabled {
+        @apply text-neutral-gray-4;
+
+        &::placeholder {
+          @apply text-neutral-gray-4;
+        }
+      }
+    }
+
+    &__icon {
+      @apply size-6 text-neutral-gray-6 transition-colors;
+
+      .input__container:has(&) {
+        @apply flex items-center gap-2;
+      }
+
+      .input__container:has(input:not(:disabled)):has(input[value]):has(
+          input:not([value=""])
+        )
+        & {
+        @apply text-primary-600;
+      }
+    }
+
+    &__error-message {
+      @apply text-caption-2 text-state-error-1;
+    }
+
+    &--size {
+      &-sm {
+        &.input__container {
+          @apply px-4 py-2;
+        }
+      }
+      &-md {
+        &.input__container {
+          @apply px-4 py-3;
+        }
+      }
+    }
+
+    &--state-error {
+      &.input__container {
+        @apply border-state-error-1;
+      }
+    }
+  }
 }
