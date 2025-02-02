@@ -20,10 +20,12 @@ export type InputErrorMessageProps = ComponentPropsWithoutRef<"p">;
 export type InputErrorContainerProps = ComponentPropsWithoutRef<"div">;
 
 export type InputProps = Simplify<
-  Pick<InputElementProps, "value" | "onChange" | "placeholder" | "disabled"> &
-    Pick<InputRootProps, "size"> & {
+  Pick<
+    InputElementProps,
+    "value" | "onChange" | "placeholder" | "disabled" | "name"
+  > &
+    Pick<InputRootProps, "size" | "className"> & {
       error?: boolean | string;
-    } & {
       icon?: ReactNode;
     }
 >;

@@ -72,12 +72,26 @@ const InputErrorContainer = forwardRef<
 InputErrorContainer.displayName = "InputErrorContainer";
 
 const Input = forwardRef<HTMLDivElement, InputProps>(
-  ({ disabled, error, onChange, icon, placeholder, size, value }, ref) => {
+  (
+    {
+      disabled,
+      error,
+      onChange,
+      icon,
+      placeholder,
+      size,
+      className,
+      name,
+      value,
+    },
+    ref,
+  ) => {
     const input = (
-      <InputRoot ref={ref} error={!!error} size={size}>
+      <InputRoot ref={ref} error={!!error} size={size} className={className}>
         {!!icon && <InputIcon>{icon}</InputIcon>}
         <InputElement
           disabled={disabled}
+          name={name}
           value={value}
           onChange={onChange}
           placeholder={placeholder}
