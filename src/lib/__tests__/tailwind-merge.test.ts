@@ -39,4 +39,15 @@ describe("tailwind-merge", () => {
       });
     });
   });
+
+  describe("animate", () => {
+    it("should override animate classes", () => {
+      [
+        ["animate-path-draw", "animate-path-draw-reverse"],
+        ["animate-spin", "animate-path-draw"],
+      ].forEach(([oldClass, newClass]) => {
+        expect(twMerge(oldClass, newClass)).toBe(newClass);
+      });
+    });
+  });
 });

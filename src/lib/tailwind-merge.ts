@@ -94,6 +94,7 @@ export const twMergeConfig: Parameters<
   extend: {
     classGroups: {
       shadow: [{ shadow: [""] }],
+      animate: [{ animate: [{ "path-draw": ["", "reverse"] }] }],
     },
   },
 };
