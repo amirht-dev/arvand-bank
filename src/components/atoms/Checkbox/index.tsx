@@ -1,15 +1,10 @@
-"use client";
-
-import { motion } from "motion/react";
-import { forwardRef, useState } from "react";
+import { forwardRef } from "react";
 import { CheckboxProps } from "./index.types";
 
 const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   ({ checked, ...props }, ref) => {
-    const [pathLength, setPathLength] = useState<number | undefined>(undefined);
-
     return (
-      <label className="flex size-4 overflow-hidden rounded-sm border border-neutral-gray-5 has-[input:checked]:border-primary-500 has-[input:checked]:bg-primary-500">
+      <label className="group flex size-4 overflow-hidden rounded-sm border border-neutral-gray-5 transition-colors has-[input:checked]:border-primary-500 has-[input:checked]:bg-primary-500">
         <input
           {...props}
           checked={checked}
@@ -24,31 +19,21 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           className="size-full"
         >
           <path
-            ref={(el) => {
-              setPathLength(el?.getTotalLength());
+            ref={(e) => {
+              e?.style.setProperty(
+                "--path-length",
+                e.getTotalLength().toString(),
+              );
             }}
-            className="stroke-transparent"
+            className="group-has-[input:checked]:animate-path-draw-reverse stroke-neutral-white"
+            style={{
+              strokeDasharray: "var(--path-length)",
+            }}
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
             d="M20 6 9 17l-5-5"
           />
-          {pathLength != undefined && checked && (
-            <motion.path
-              className="stroke-neutral-white"
-              strokeWidth="3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeDasharray={pathLength}
-              initial={{
-                strokeDashoffset: -pathLength,
-              }}
-              animate={{
-                strokeDashoffset: 0,
-              }}
-              d="M20 6 9 17l-5-5"
-            />
-          )}
         </svg>
       </label>
     );
