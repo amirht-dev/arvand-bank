@@ -5,14 +5,18 @@ import "../src/styles/globals.css";
 const preview: Preview = {
   tags: ["autodocs"],
   beforeAll: () => {
-    const fontClasses = [iranSansX.variable, "font-iranSansX", "antialiased"];
+    const fontClasses = ["font-iranSansX", "antialiased", "font-feature-farsi"];
 
+    document.documentElement.classList.add(iranSansX.variable);
     document.body.classList.add(...fontClasses);
-    document.body.setAttribute("dir", "rtl");
+    document.documentElement.setAttribute("dir", "rtl");
+    document.documentElement.setAttribute("lang", "fa");
 
     return () => {
+      document.documentElement.classList.remove(iranSansX.variable);
       document.body.classList.remove(...fontClasses);
-      document.body.removeAttribute("dir");
+      document.documentElement.removeAttribute("dir");
+      document.documentElement.removeAttribute("lang");
     };
   },
   parameters: {

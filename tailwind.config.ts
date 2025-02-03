@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import tailwindAnimate from "tailwindcss-animate";
+import Plugin from "tailwindcss/plugin";
 
 export default {
   darkMode: ["class"],
@@ -7,6 +8,7 @@ export default {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./.storybook/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     fontFamily: {
@@ -113,5 +115,21 @@ export default {
       },
     },
   },
-  plugins: [tailwindAnimate],
+  plugins: [
+    tailwindAnimate,
+    Plugin(({ addUtilities }) => {
+      addUtilities({
+        ".font-feature-farsi": {
+          "-moz-font-feature-settings": '"ss02"',
+          "-webkit-font-feature-settings": '"ss02"',
+          "font-feature-settings": '"ss02"',
+        },
+        ".font-feature-normal": {
+          "-moz-font-feature-settings": "normal",
+          "-webkit-font-feature-settings": "normal",
+          "font-feature-settings": "normal",
+        },
+      });
+    }),
+  ],
 } satisfies Config;
