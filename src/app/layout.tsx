@@ -1,6 +1,6 @@
 import { iranSansX } from "@/lib/fonts";
-import type { Metadata } from "next";
 import "@/styles/globals.css";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,7 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl" className={iranSansX.variable}>
-      <body className={`font-iranSansX antialiased`}>{children}</body>
+      <body className={`font-iranSansX antialiased`}>
+        {children}
+        <div id="popover-root"></div>
+      </body>
     </html>
   );
 }
