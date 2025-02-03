@@ -1,10 +1,10 @@
-const union = (...types: string[]) => types.join(" | ");
 export const TYPES = {
-  union,
-  undefinable: (type: string) => union(type, TYPES.primitive.undefined),
-  nullable: (type: string) => union(type, TYPES.primitive.null),
+  union: (...types: string[]) => types.join(" | "),
+  arrayOf: (type: string) => `Array<${type}>`,
+  undefinable: (type: string) => TYPES.union(type, TYPES.primitive.undefined),
+  nullable: (type: string) => TYPES.union(type, TYPES.primitive.null),
   nullish: (type: string) =>
-    union(type, TYPES.primitive.undefined, TYPES.primitive.null),
+    TYPES.union(type, TYPES.primitive.undefined, TYPES.primitive.null),
   primitive: {
     string: "string",
     number: "number",
@@ -20,8 +20,10 @@ export const TYPES = {
     },
     ReactNode: "ReactNode",
     events: {
-      ChangeEventHandler: (genericType: string) =>
-        `ChangeEventHandler<${genericType}>`,
+      ChangeEventHandler: (genericType: string, reactPrefix = true) =>
+        `${reactPrefix ? "React." : ""}ChangeEventHandler<${genericType}>`,
     },
   },
 };
+
+export const T = TYPES;
