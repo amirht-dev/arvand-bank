@@ -4,6 +4,17 @@ import "../src/styles/globals.css";
 
 const preview: Preview = {
   tags: ["autodocs"],
+  beforeAll: () => {
+    const fontClasses = [iranSansX.variable, "font-iranSansX", "antialiased"];
+
+    document.body.classList.add(...fontClasses);
+    document.body.setAttribute("dir", "rtl");
+
+    return () => {
+      document.body.classList.remove(...fontClasses);
+      document.body.removeAttribute("dir");
+    };
+  },
   parameters: {
     controls: {
       matchers: {
@@ -15,16 +26,6 @@ const preview: Preview = {
       appDirectory: true,
     },
   },
-  decorators: [
-    (Story) => (
-      <div
-        dir="rtl"
-        className={`${iranSansX.variable} font-iranSansX antialiased`}
-      >
-        {Story()}
-      </div>
-    ),
-  ],
 };
 
 export default preview;
