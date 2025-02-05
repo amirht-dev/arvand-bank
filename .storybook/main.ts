@@ -12,10 +12,6 @@ const config: StorybookConfig = {
     name: "@storybook/nextjs",
     options: {},
   },
-  previewBody: (body) => `
-    ${body}
-    <div id="popover-root"></div>
-  `,
   staticDirs: [
     {
       from: "../src/assets/fonts",
