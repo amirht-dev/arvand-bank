@@ -9,13 +9,13 @@ const preview: Preview = {
 
     document.documentElement.classList.add(iranSansX.variable);
     document.body.classList.add(...fontClasses);
-    document.documentElement.setAttribute("dir", "rtl");
+    document.getElementById("storybook-root")?.setAttribute("dir", "rtl");
     document.documentElement.setAttribute("lang", "fa");
 
     return () => {
       document.documentElement.classList.remove(iranSansX.variable);
       document.body.classList.remove(...fontClasses);
-      document.documentElement.removeAttribute("dir");
+      document.getElementById("storybook-root")?.removeAttribute("dir");
       document.documentElement.removeAttribute("lang");
     };
   },
