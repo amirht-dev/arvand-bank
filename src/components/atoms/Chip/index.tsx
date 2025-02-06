@@ -5,7 +5,7 @@ import { DEFAULT_CHIP_ELEMENT } from "./index.constants";
 import { ChipProps } from "./index.types";
 
 const chipVariants = tv({
-  base: "py-1.5 px-4 rounded-full text-caption-2 leading-[160%]",
+  base: "py-1.5 px-4 rounded-full text-caption-2 leading-[160%] w-fit",
   variants: {
     variant: {
       fill: "",
