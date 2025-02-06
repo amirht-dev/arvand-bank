@@ -80,3 +80,9 @@ export const Info = {
     color: "info",
   },
 } satisfies Story;
+
+export const Black = {
+  args: {
+    color: "black",
+  },
+} satisfies Story;

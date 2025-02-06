@@ -17,6 +17,7 @@ const chipVariants = tv({
       success: "",
       warning: "",
       info: "",
+      black: "",
     },
   },
   compoundVariants: [
@@ -82,6 +83,22 @@ const chipVariants = tv({
       color: "info",
       variant: "tune",
       className: "bg-state-info-2 text-state-info-1",
+    },
+    {
+      color: "black",
+      variant: "fill",
+      className: "bg-neutral-black text-neutral-white",
+    },
+    {
+      color: "black",
+      variant: "outline",
+      className:
+        "border border-neutral-black text-neutral-black bg-transparent",
+    },
+    {
+      color: "black",
+      variant: "tune",
+      className: "bg-neutral-gray-9 text-neutral-black",
     },
   ],
   defaultVariants: {
