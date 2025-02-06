@@ -68,3 +68,9 @@ export const Success = {
     color: "success",
   },
 } satisfies Story;
+
+export const Warning = {
+  args: {
+    color: "warning",
+  },
+} satisfies Story;
