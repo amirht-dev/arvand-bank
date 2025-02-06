@@ -62,3 +62,9 @@ export const Error = {
     color: "error",
   },
 } satisfies Story;
+
+export const Success = {
+  args: {
+    color: "success",
+  },
+} satisfies Story;
