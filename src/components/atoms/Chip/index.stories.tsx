@@ -74,3 +74,9 @@ export const Warning = {
     color: "warning",
   },
 } satisfies Story;
+
+export const Info = {
+  args: {
+    color: "info",
+  },
+} satisfies Story;
