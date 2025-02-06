@@ -1,0 +1,27 @@
+import { sidebarMenu } from "@/constants";
+import type { Meta, StoryObj } from "@/types/storybook";
+import Sidebar from ".";
+
+const meta = {
+  component: Sidebar,
+  tags: ["!autodocs"],
+  parameters: {
+    layout: "fullscreen",
+  },
+} satisfies Meta;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Default = {} satisfies Story;
+
+export const Dashboard = {
+  parameters: {
+    nextjs: {
+      navigation: {
+        pathname: sidebarMenu.dashboard.href,
+      },
+    },
+  },
+} satisfies Story;
