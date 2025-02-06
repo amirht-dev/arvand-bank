@@ -8,3 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 export function avatarPlaceholderURL(size = 300) {
   return `https://i.pravatar.cc/${size}`;
 }
+
+export function formatPrice(price: number) {
+  return new Intl.NumberFormat("fa-IR").format(price);
+}
