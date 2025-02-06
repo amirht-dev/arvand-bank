@@ -8,4 +8,5 @@ export const CHIP_COLORS = [
   "warning",
   "info",
   "black",
+  "primary",
 ] as const;

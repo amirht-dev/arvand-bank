@@ -8,7 +8,7 @@ const meta = {
   component: Chip,
   args: {
     variant: "fill",
-    color: "error",
+    color: "primary",
     children: "عنوان",
   },
   argTypes: {
@@ -84,5 +84,11 @@ export const Info = {
 export const Black = {
   args: {
     color: "black",
+  },
+} satisfies Story;
+
+export const Primary = {
+  args: {
+    color: "primary",
   },
 } satisfies Story;

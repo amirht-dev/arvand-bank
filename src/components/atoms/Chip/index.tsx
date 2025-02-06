@@ -18,6 +18,7 @@ const chipVariants = tv({
       warning: "",
       info: "",
       black: "",
+      primary: "",
     },
   },
   compoundVariants: [
@@ -100,10 +101,25 @@ const chipVariants = tv({
       variant: "tune",
       className: "bg-neutral-gray-9 text-neutral-black",
     },
+    {
+      color: "primary",
+      variant: "fill",
+      className: "bg-primary-500 text-neutral-white",
+    },
+    {
+      color: "primary",
+      variant: "outline",
+      className: "border border-primary-500 text-primary-500 bg-transparent",
+    },
+    {
+      color: "primary",
+      variant: "tune",
+      className: "bg-primary-50 text-primary-600",
+    },
   ],
   defaultVariants: {
     variant: "fill",
-    color: "error",
+    color: "primary",
   },
 });
 
@@ -112,7 +128,7 @@ const Chip = forwardRef<
   ChipProps
 >(
   (
-    { asChild, variant = "fill", color = "error", className, ...props },
+    { asChild, variant = "fill", color = "primary", className, ...props },
     ref,
   ) => {
     const Comp = asChild ? Slot : DEFAULT_CHIP_ELEMENT;
