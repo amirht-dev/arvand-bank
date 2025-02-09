@@ -87,7 +87,11 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
 
                 <div className="flex items-center gap-2">
                   <span className="text-heading-4">
-                    <TogglerVisible>{formatPrice(178087000)}</TogglerVisible>
+                    <TogglerVisible>
+                      {formatPrice(178_087_000, {
+                        style: undefined,
+                      })}
+                    </TogglerVisible>
                     <TogglerInvisible>*********</TogglerInvisible>
                   </span>
 
