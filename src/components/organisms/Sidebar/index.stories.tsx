@@ -25,3 +25,13 @@ export const Dashboard = {
     },
   },
 } satisfies Story;
+
+export const AccountManagement = {
+  parameters: {
+    nextjs: {
+      navigation: {
+        pathname: sidebarMenu.accountManagement.href,
+      },
+    },
+  },
+} satisfies Story;
