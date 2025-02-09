@@ -67,25 +67,82 @@ export default {
       },
     },
     fontSize: {
-      "display-1": ["64px", { fontWeight: "600", lineHeight: "140%" }],
-      "display-2": ["56px", { fontWeight: "600", lineHeight: "140%" }],
-      "heading-1": ["44px", { fontWeight: "600", lineHeight: "140%" }],
-      "heading-2": ["40px", { fontWeight: "600", lineHeight: "140%" }],
-      "heading-3": ["32px", { fontWeight: "600", lineHeight: "140%" }],
-      "heading-4": ["24px", { fontWeight: "600", lineHeight: "140%" }],
-      "heading-5": ["20px", { fontWeight: "600", lineHeight: "140%" }],
-      "heading-6": ["16px", { fontWeight: "600", lineHeight: "140%" }],
-      "body-1": ["20px", { fontWeight: "400", lineHeight: "140%" }],
-      "body-2": ["18px", { fontWeight: "400", lineHeight: "140%" }],
-      "body-3": ["16px", { fontWeight: "500", lineHeight: "140%" }],
-      "body-4": ["16px", { fontWeight: "400", lineHeight: "140%" }],
-      "body-5": ["14px", { fontWeight: "500", lineHeight: "140%" }],
-      "caption-1": ["14px", { fontWeight: "600", lineHeight: "140%" }],
-      "caption-2": ["12px", { fontWeight: "400", lineHeight: "160%" }],
-      "button-1": ["16px", { fontWeight: "400", lineHeight: "140%" }],
-      "button-2": ["14px", { fontWeight: "400", lineHeight: "140%" }],
-      "overline-1": ["16px", { fontWeight: "400", lineHeight: "140%" }],
-      "overline-2": ["12px", { fontWeight: "600", lineHeight: "140%" }],
+      "display-1": [
+        "var(--text-display-1-fs)",
+        { fontWeight: "var(--text-display-1-fw)", lineHeight: "140%" },
+      ],
+      "display-2": [
+        "var(--text-display-2-fs)",
+        { fontWeight: "var(--text-display-2-fw)", lineHeight: "140%" },
+      ],
+      "heading-1": [
+        "var(--text-heading-1-fs)",
+        { fontWeight: "var(--text-heading-1-fw)", lineHeight: "140%" },
+      ],
+      "heading-2": [
+        "var(--text-heading-2-fs)",
+        { fontWeight: "var(--text-heading-2-fw)", lineHeight: "140%" },
+      ],
+      "heading-3": [
+        "var(--text-heading-3-fs)",
+        { fontWeight: "var(--text-heading-3-fw)", lineHeight: "140%" },
+      ],
+      "heading-4": [
+        "var(--text-heading-4-fs)",
+        { fontWeight: "var(--text-heading-4-fw)", lineHeight: "140%" },
+      ],
+      "heading-5": [
+        "var(--text-heading-5-fs)",
+        { fontWeight: "var(--text-heading-5-fw)", lineHeight: "140%" },
+      ],
+      "heading-6": [
+        "var(--text-heading-6-fs)",
+        { fontWeight: "var(--text-heading-6-fw)", lineHeight: "140%" },
+      ],
+      "body-1": [
+        "var(--text-body-1-fs)",
+        { fontWeight: "var(--text-body-1-fw)", lineHeight: "140%" },
+      ],
+      "body-2": [
+        "var(--text-body-2-fs)",
+        { fontWeight: "var(--text-body-2-fw)", lineHeight: "140%" },
+      ],
+      "body-3": [
+        "var(--text-body-3-fs)",
+        { fontWeight: "var(--text-body-3-fw)", lineHeight: "140%" },
+      ],
+      "body-4": [
+        "var(--text-body-4-fs)",
+        { fontWeight: "var(--text-body-4-fw)", lineHeight: "140%" },
+      ],
+      "body-5": [
+        "var(--text-body-5-fs)",
+        { fontWeight: "var(--text-body-5-fw)", lineHeight: "140%" },
+      ],
+      "caption-1": [
+        "var(--text-caption-1-fs)",
+        { fontWeight: "var(--text-caption-1-fw)", lineHeight: "140%" },
+      ],
+      "caption-2": [
+        "var(--text-caption-2-fs)",
+        { fontWeight: "var(--text-caption-2-fw)", lineHeight: "160%" },
+      ],
+      "button-1": [
+        "var(--text-button-1-fs)",
+        { fontWeight: "var(--text-button-1-fw)", lineHeight: "140%" },
+      ],
+      "button-2": [
+        "var(--text-button-2-fs)",
+        { fontWeight: "var(--text-button-2-fw)", lineHeight: "140%" },
+      ],
+      "overline-1": [
+        "var(--text-overline-1-fs)",
+        { fontWeight: "var(--text-overline-1-fw)", lineHeight: "140%" },
+      ],
+      "overline-2": [
+        "var(--text-overline-2-fs)",
+        { fontWeight: "var(--text-overline-2-fw)", lineHeight: "140%" },
+      ],
     },
     extend: {
       boxShadow: {
