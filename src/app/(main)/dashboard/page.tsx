@@ -20,12 +20,11 @@ import {
 } from "@/components/atoms/Tabs";
 import Card from "@/components/molecules/Card";
 import PageTitle from "@/components/molecules/PageTitle";
+import Segment from "@/components/molecules/Segment";
 import TransactionsTable from "@/components/molecules/TransactionsTable";
-import { ComponentPropsWithoutRefWithProps } from "@/types/utils";
-import { cn, formatPrice } from "@/utils/utils";
+import { formatPrice } from "@/utils/utils";
 import Image from "next/image";
 import Link from "next/link";
-import { Arrayable } from "type-fest";
 
 export default function DashboardPage() {
   return (
@@ -46,38 +45,6 @@ export default function DashboardPage() {
     </>
   );
 }
-
-const Segment = ({
-  title,
-  actions,
-  className,
-  children,
-  ...props
-}: ComponentPropsWithoutRefWithProps<
-  "div",
-  {
-    title: string;
-    actions?: Arrayable<React.ReactNode>;
-  }
->) => {
-  return (
-    <div
-      {...props}
-      className={cn(
-        "space-y-6 rounded-2xl border border-neutral-gray-9 p-6",
-        className,
-      )}
-    >
-      <div className="flex items-center justify-between">
-        <h5 className="text-heading-5 text-neutral-gray-1">{title}</h5>
-
-        {actions && <div className="flex gap-2">{actions}</div>}
-      </div>
-
-      {children}
-    </div>
-  );
-};
 
 function Cards() {
   return (
