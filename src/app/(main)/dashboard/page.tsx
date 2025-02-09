@@ -19,6 +19,7 @@ import {
   TabsTrigger,
 } from "@/components/atoms/Tabs";
 import Card from "@/components/molecules/Card";
+import PageTitle from "@/components/molecules/PageTitle";
 import TransactionsTable from "@/components/molecules/TransactionsTable";
 import { ComponentPropsWithoutRefWithProps } from "@/types/utils";
 import { cn, formatPrice } from "@/utils/utils";
@@ -29,10 +30,7 @@ import { Arrayable } from "type-fest";
 export default function DashboardPage() {
   return (
     <>
-      <h4 className="flex items-center gap-2 text-primary-700">
-        <ChartLineUp_Outline className="size-8" />
-        <span className="text-heading-4">داشبورد</span>
-      </h4>
+      <PageTitle icon={<ChartLineUp_Outline />} label="داشبورد" />
 
       <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-10">
         <Cards />
