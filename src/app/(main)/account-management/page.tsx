@@ -6,6 +6,7 @@ import { MoneyBills_Outline } from "@/components/atoms/icons/Money&Payment/Money
 import Card from "@/components/molecules/Card";
 import PageTitle from "@/components/molecules/PageTitle";
 import Segment from "@/components/molecules/Segment";
+import TransactionsTable from "@/components/molecules/TransactionsTable";
 import ActivitySummery from "@/components/organisms/ActivitySummery";
 
 export default function AccountManagementPage() {
@@ -16,6 +17,7 @@ export default function AccountManagementPage() {
       <div className="mt-8 grid gap-10">
         <Deposit />
         <ActivitySummery />
+        <Transactions />
       </div>
     </>
   );
@@ -38,6 +40,14 @@ function Deposit() {
       ]}
     >
       <Card />
+    </Segment>
+  );
+}
+
+function Transactions() {
+  return (
+    <Segment title="تراکنش ها">
+      <TransactionsTable />
     </Segment>
   );
 }
