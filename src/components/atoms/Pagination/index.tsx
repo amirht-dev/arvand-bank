@@ -49,7 +49,6 @@ const PaginationLink = React.forwardRef<
   PaginationLinkProps
 >(({ className, isActive = false, disabled = false, ...props }, ref) => (
   <Link
-    shallow
     {...props}
     ref={ref}
     aria-current={isActive ? "page" : undefined}
@@ -104,15 +103,22 @@ const Pagination = ({
   pages,
   currentPage,
   prevAndNext = false,
+  prevDisabled,
+  nextDisabled,
+  rootProps,
+  contentProps,
+  itemProps,
+  linkProps,
   linkFormatter = (page) => `?page=${page}`,
 }: paginationProps) => {
   return (
-    <PaginationRoot>
-      <PaginationContent>
+    <PaginationRoot {...rootProps}>
+      <PaginationContent {...contentProps}>
         {prevAndNext && (
-          <PaginationItem>
+          <PaginationItem {...itemProps}>
             <PaginationPrevious
-              disabled={currentPage === 1}
+              {...linkProps}
+              disabled={prevDisabled ?? currentPage === 1}
               href={linkFormatter(currentPage - 1)}
             />
           </PaginationItem>
@@ -121,8 +127,9 @@ const Pagination = ({
           (value, idx) => {
             const page = idx + 1;
             return (
-              <PaginationItem key={idx}>
+              <PaginationItem {...itemProps} key={idx}>
                 <PaginationLink
+                  {...linkProps}
                   isActive={page === currentPage}
                   disabled={typeof value === "object" ? value.disabled : false}
                   href={linkFormatter(page)}
@@ -134,11 +141,13 @@ const Pagination = ({
           },
         )}
         {prevAndNext && (
-          <PaginationItem>
+          <PaginationItem {...itemProps}>
             <PaginationNext
+              {...linkProps}
               disabled={
+                nextDisabled ??
                 currentPage ===
-                (typeof pages === "number" ? pages : pages.length)
+                  (typeof pages === "number" ? pages : pages.length)
               }
               href={linkFormatter(currentPage + 1)}
             />
