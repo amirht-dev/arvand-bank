@@ -35,7 +35,10 @@ const BreadcrumbItem = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <li
     ref={ref}
-    className={cn("group inline-flex items-center gap-2", className)}
+    className={cn(
+      "group inline-flex items-center gap-2 text-caption-2 text-neutral-gray-1 hover:text-primary-500",
+      className,
+    )}
     {...props}
   >
     {children}
@@ -74,7 +77,7 @@ const BreadcrumbIcon = React.forwardRef<
     <Comp
       ref={ref}
       className={cn(
-        "size-6 text-neutral-gray-3 transition-colors group-hover:text-primary-500",
+        "size-6 text-neutral-gray-3 transition-colors group-hover:text-primary-500 group-aria-[current=page]/link:text-primary-500",
         className,
       )}
       {...props}
@@ -92,7 +95,10 @@ const BreadcrumbPage = React.forwardRef<
     role="link"
     aria-disabled="true"
     aria-current="page"
-    className={cn("inline-flex gap-2 font-normal text-primary-500", className)}
+    className={cn(
+      "group/link inline-flex items-center gap-2 font-normal text-primary-500",
+      className,
+    )}
     {...props}
   />
 ));
@@ -129,6 +135,7 @@ BreadcrumbEllipsis.displayName = "BreadcrumbEllipsis";
 export {
   Breadcrumb,
   BreadcrumbEllipsis,
+  BreadcrumbIcon,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
