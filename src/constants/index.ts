@@ -12,4 +12,14 @@ export const sidebarMenu = {
     href: "/account-management",
     icon: MoneyBills_Outline,
   },
+  payment: {
+    label: "پرداخت",
+    icon: MoneyBills_Outline,
+    items: {
+      transfer: {
+        label: "انتقال وجه",
+        href: "/payment/transfer",
+      },
+    },
+  },
 };

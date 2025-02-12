@@ -35,3 +35,13 @@ export const AccountManagement = {
     },
   },
 } satisfies Story;
+
+export const PaymentTransfer = {
+  parameters: {
+    nextjs: {
+      navigation: {
+        pathname: sidebarMenu.payment.items.transfer.href,
+      },
+    },
+  },
+} satisfies Story;
