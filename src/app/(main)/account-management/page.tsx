@@ -4,7 +4,7 @@ import { PlusSquare_Outline } from "@/components/atoms/icons/general/PlusSquare"
 import { CreditCartEdit_Outline } from "@/components/atoms/icons/Money&Payment/CreditCartEdit";
 import { MoneyBills_Outline } from "@/components/atoms/icons/Money&Payment/MoneyBills";
 import Card from "@/components/molecules/Card";
-import PageTitle from "@/components/molecules/PageTitle";
+import { PageTitle, PageTitleIcon } from "@/components/molecules/PageTitle";
 import Segment from "@/components/molecules/Segment";
 import TransactionsTable from "@/components/molecules/TransactionsTable";
 import ActivitySummery from "@/components/organisms/ActivitySummery";
@@ -12,7 +12,13 @@ import ActivitySummery from "@/components/organisms/ActivitySummery";
 export default function AccountManagementPage() {
   return (
     <>
-      <PageTitle icon={<MoneyBills_Outline />} label="مدیریت حساب" />
+      <PageTitle>
+        <PageTitleIcon>
+          <MoneyBills_Outline />
+        </PageTitleIcon>
+
+        <span>مدیریت حساب</span>
+      </PageTitle>
 
       <div className="mt-8 grid gap-10">
         <Deposit />

@@ -19,7 +19,7 @@ import {
   TabsTrigger,
 } from "@/components/atoms/Tabs";
 import Card from "@/components/molecules/Card";
-import PageTitle from "@/components/molecules/PageTitle";
+import { PageTitle, PageTitleIcon } from "@/components/molecules/PageTitle";
 import Segment from "@/components/molecules/Segment";
 import TransactionsTable from "@/components/molecules/TransactionsTable";
 import { formatPrice } from "@/utils/utils";
@@ -29,7 +29,13 @@ import Link from "next/link";
 export default function DashboardPage() {
   return (
     <>
-      <PageTitle icon={<ChartLineUp_Outline />} label="داشبورد" />
+      <PageTitle>
+        <PageTitleIcon>
+          <ChartLineUp_Outline />
+        </PageTitleIcon>
+
+        <span>داشبورد</span>
+      </PageTitle>
 
       <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-10">
         <Cards />

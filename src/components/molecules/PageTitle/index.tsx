@@ -1,17 +1,30 @@
+import { cn } from "@/utils/utils";
 import { Slot } from "@radix-ui/react-slot";
-import { forwardRef } from "react";
-import { PageTitleProps } from "./index.types";
+import { ComponentPropsWithoutRef, forwardRef } from "react";
 
-const PageTitle = forwardRef<HTMLHeadingElement, PageTitleProps>(
-  ({ icon, label }, ref) => {
-    return (
-      <h4 ref={ref} className="flex items-center gap-2 text-primary-700">
-        <Slot className="size-8">{icon}</Slot>
-        <span className="text-heading-4">{label}</span>
-      </h4>
-    );
-  },
-);
+const PageTitle = forwardRef<
+  HTMLHeadingElement,
+  ComponentPropsWithoutRef<"h4">
+>(({ className, ...props }, ref) => {
+  return (
+    <h4
+      ref={ref}
+      {...props}
+      className={cn(
+        "flex items-center gap-2 text-heading-4 text-primary-700",
+        className,
+      )}
+    />
+  );
+});
 PageTitle.displayName = "PageTitle";
 
-export default PageTitle;
+const PageTitleIcon = forwardRef<
+  HTMLSpanElement,
+  ComponentPropsWithoutRef<"span">
+>(({ className, ...props }, ref) => {
+  return <Slot ref={ref} className={cn("size-8", className)} {...props} />;
+});
+PageTitleIcon.displayName = "PageTitleIcon";
+
+export { PageTitle, PageTitleIcon };
