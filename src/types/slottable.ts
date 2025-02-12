@@ -7,7 +7,7 @@ import type {
 } from "type-fest";
 import type { OverrideProps, Props } from "./utils";
 
-export type PropsWithAsChild<P extends Props> = OverrideProps<
+export type PropsWithAsChild<P extends Props = EmptyObject> = OverrideProps<
   P,
   {
     asChild?: boolean;
