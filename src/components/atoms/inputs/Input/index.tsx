@@ -1,8 +1,9 @@
 import { cn } from "@/utils/utils";
 import { forwardRef } from "react";
 import {
+  InputContainerProps,
+  InputDescriptionProps,
   InputElementProps,
-  InputErrorContainerProps,
   InputErrorMessageProps,
   InputIconProps,
   InputProps,
@@ -61,15 +62,28 @@ const InputErrorMessage = forwardRef<
 });
 InputErrorMessage.displayName = "InputErrorMessage";
 
-const InputErrorContainer = forwardRef<
-  HTMLDivElement,
-  InputErrorContainerProps
->((props, ref) => {
+const InputDescription = forwardRef<
+  HTMLParagraphElement,
+  InputDescriptionProps
+>(({ className, ...props }, ref) => {
   return (
-    <div {...props} ref={ref} className={cn("space-y-1", props.className)} />
+    <p
+      {...props}
+      ref={ref}
+      className={cn("text-caption-2 text-primary-600", className)}
+    />
   );
 });
-InputErrorContainer.displayName = "InputErrorContainer";
+InputDescription.displayName = "InputDescription";
+
+const InputContainer = forwardRef<HTMLDivElement, InputContainerProps>(
+  (props, ref) => {
+    return (
+      <div {...props} ref={ref} className={cn("space-y-1", props.className)} />
+    );
+  },
+);
+InputContainer.displayName = "InputContainer";
 
 const Input = forwardRef<HTMLDivElement, InputProps>(
   (
@@ -78,6 +92,7 @@ const Input = forwardRef<HTMLDivElement, InputProps>(
       error,
       onChange,
       icon,
+      description,
       placeholder,
       size,
       className,
@@ -99,12 +114,15 @@ const Input = forwardRef<HTMLDivElement, InputProps>(
       </InputRoot>
     );
 
-    if (typeof error === "string")
+    if (typeof error === "string" || description)
       return (
-        <InputErrorContainer>
+        <InputContainer>
           {input}
           <InputErrorMessage>{error}</InputErrorMessage>
-        </InputErrorContainer>
+          {!error && description && (
+            <InputDescription>{description}</InputDescription>
+          )}
+        </InputContainer>
       );
 
     return input;
@@ -114,8 +132,9 @@ Input.displayName = "Input";
 
 export {
   InputRoot as Input,
+  InputContainer,
+  InputDescription,
   InputElement,
-  InputErrorContainer,
   InputErrorMessage,
   InputIcon,
 };

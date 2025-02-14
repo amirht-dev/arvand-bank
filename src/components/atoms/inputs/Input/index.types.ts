@@ -17,7 +17,9 @@ export type InputElementProps = ComponentPropsWithoutRef<"input">;
 
 export type InputErrorMessageProps = ComponentPropsWithoutRef<"p">;
 
-export type InputErrorContainerProps = ComponentPropsWithoutRef<"div">;
+export type InputDescriptionProps = ComponentPropsWithoutRef<"p">;
+
+export type InputContainerProps = ComponentPropsWithoutRef<"div">;
 
 export type InputProps = Simplify<
   Pick<
@@ -26,6 +28,7 @@ export type InputProps = Simplify<
   > &
     Pick<InputRootProps, "size" | "className"> & {
       error?: boolean | string;
+      description?: string;
       icon?: ReactNode;
     }
 >;

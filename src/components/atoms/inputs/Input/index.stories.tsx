@@ -5,8 +5,9 @@ import { TYPES } from "@/utils/storybook";
 import { useArgs } from "@storybook/preview-api";
 import { fn } from "@storybook/test";
 import Input, {
+  InputContainer,
+  InputDescription,
   InputElement,
-  InputErrorContainer,
   InputErrorMessage,
   InputIcon,
   Input as InputRoot,
@@ -20,8 +21,9 @@ const meta = {
   subcomponents: {
     InputRoot,
     InputElement,
-    InputErrorContainer,
+    InputContainer,
     InputErrorMessage,
+    InputDescription,
     InputIcon,
   },
   argTypes: {
@@ -60,6 +62,9 @@ const meta = {
     },
     error: {
       control: "boolean",
+    },
+    description: {
+      control: "text",
     },
     disabled: {
       control: "boolean",
@@ -131,6 +136,12 @@ export const WithErrorMessage = {
   },
 } satisfies Story;
 
+export const WithDescription = {
+  args: {
+    description: "لورم ایپسوم متن ساختگی با تولید سادگی",
+  },
+} satisfies Story;
+
 export const CompositionPattern = {
   args: {
     icon: true,
@@ -138,7 +149,7 @@ export const CompositionPattern = {
   render(args) {
     const [{ value }, updateArgs] = useArgs<InputProps>();
     return (
-      <InputErrorContainer>
+      <InputContainer>
         <InputRoot error={!!args.error} size={args.size}>
           {args.icon && <InputIcon>{args.icon}</InputIcon>}
           <InputElement
@@ -154,7 +165,10 @@ export const CompositionPattern = {
         {args.error && typeof args.error === "string" && (
           <InputErrorMessage>{args.error}</InputErrorMessage>
         )}
-      </InputErrorContainer>
+        {!args.error && args.description && (
+          <InputDescription>{args.description}</InputDescription>
+        )}
+      </InputContainer>
     );
   },
 } satisfies Story;
