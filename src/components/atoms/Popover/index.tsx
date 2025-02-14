@@ -5,12 +5,23 @@ import * as React from "react";
 
 import { cn } from "@/utils/utils";
 import { Merge } from "type-fest";
+import { Times_Outline } from "../icons/general/Times";
 
 const Popover = PopoverPrimitive.Root;
 
 const PopoverTrigger = PopoverPrimitive.Trigger;
 
 const PopoverAnchor = PopoverPrimitive.Anchor;
+
+const PopoverClose = React.forwardRef<
+  React.ComponentRef<typeof PopoverPrimitive.Close>,
+  React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Close>
+>(({ children, ...props }) => (
+  <PopoverPrimitive.Close {...props}>
+    {children ?? <Times_Outline className="size-[inherit]" />}
+  </PopoverPrimitive.Close>
+));
+PopoverClose.displayName = PopoverPrimitive.Close.displayName;
 
 const PopoverContent = React.forwardRef<
   React.ComponentRef<typeof PopoverPrimitive.Content>,
@@ -49,4 +60,4 @@ const PopoverContent = React.forwardRef<
 );
 PopoverContent.displayName = PopoverPrimitive.Content.displayName;
 
-export { Popover, PopoverAnchor, PopoverContent, PopoverTrigger };
+export { Popover, PopoverAnchor, PopoverClose, PopoverContent, PopoverTrigger };
