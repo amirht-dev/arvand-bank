@@ -14,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl" className={iranSansX.variable}>
-      <body className={`font-feature-farsi font-iranSansX antialiased`}>
+      <body
+        className={`min-w-[1440px] font-iranSansX antialiased font-feature-farsi`}
+      >
         {children}
         <div id="popover-root"></div>
       </body>

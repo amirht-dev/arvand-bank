@@ -3,7 +3,7 @@ import Sidebar from "@/components/organisms/Sidebar";
 
 export default function MainLayout({ children }: NextLayoutProps) {
   return (
-    <div className="flex h-dvh flex-col overflow-hidden">
+    <div className="flex h-dvh w-full flex-col overflow-hidden">
       <Header />
       <div className="flex flex-1 overflow-hidden">
         <Sidebar />
