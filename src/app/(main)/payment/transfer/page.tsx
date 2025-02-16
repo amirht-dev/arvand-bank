@@ -29,6 +29,7 @@ import { Switch } from "@/components/atoms/Switch";
 import CardNumberInput from "@/components/molecules/CardNumberInput";
 import Numpad from "@/components/molecules/Numpad";
 import { PageTitle, PageTitleIcon } from "@/components/molecules/PageTitle";
+import Link from "next/link";
 import { ReactNode } from "react";
 
 export default function PaymentTransferPage() {
@@ -152,7 +153,12 @@ export default function PaymentTransferPage() {
             </div>
           </Field>
 
-          <Button className="mt-8 w-[160px] justify-self-start">ادامه</Button>
+          <Button
+            className="mt-8 w-[160px] justify-self-start text-center"
+            asChild
+          >
+            <Link href="/payment/transfer/confirm">ادامه</Link>
+          </Button>
         </div>
 
         <div className="relative w-[336px] space-y-6 overflow-hidden rounded-2xl bg-primary-50 px-4 py-6 text-caption-2">
