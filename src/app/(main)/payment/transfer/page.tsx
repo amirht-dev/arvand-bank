@@ -23,10 +23,10 @@ import {
 import {
   InputSlotItem,
   InputSlots,
-  InputSlotsSeparator,
 } from "@/components/atoms/inputs/InputSlots";
 import Label from "@/components/atoms/Label";
 import { Switch } from "@/components/atoms/Switch";
+import CardNumberInput from "@/components/molecules/CardNumberInput";
 import Numpad from "@/components/molecules/Numpad";
 import { PageTitle, PageTitleIcon } from "@/components/molecules/PageTitle";
 import { ReactNode } from "react";
@@ -72,18 +72,10 @@ export default function PaymentTransferPage() {
         انتقال وجه
       </PageTitle>
 
-      <div className="flex gap-4">
-        <div className="mt-8 grid flex-1 grid-cols-[1fr_auto] gap-y-6 rounded-2xl border border-neutral-gray-9 p-6">
+      <div className="mt-8 flex gap-4">
+        <div className="grid flex-1 grid-cols-[1fr_auto] gap-y-6 rounded-2xl border border-neutral-gray-9 p-6">
           <Field label="کارت مبدا">
-            <InputSlots value="">
-              <InputSlotItem idx={0} length={4} />
-              <InputSlotsSeparator />
-              <InputSlotItem idx={1} length={4} />
-              <InputSlotsSeparator />
-              <InputSlotItem idx={2} length={4} />
-              <InputSlotsSeparator />
-              <InputSlotItem idx={3} length={4} />
-            </InputSlots>
+            <CardNumberInput />
           </Field>
 
           <Field label="کد Cvv2">
@@ -106,15 +98,7 @@ export default function PaymentTransferPage() {
 
           <Field label="کارت مقصد">
             <div className="flex flex-col gap-2">
-              <InputSlots value="" className="flex-1">
-                <InputSlotItem idx={0} length={4} />
-                <InputSlotsSeparator />
-                <InputSlotItem idx={1} length={4} />
-                <InputSlotsSeparator />
-                <InputSlotItem idx={2} length={4} />
-                <InputSlotsSeparator />
-                <InputSlotItem idx={3} length={4} />
-              </InputSlots>
+              <CardNumberInput />
 
               <Label element={<Switch />} className="text-neutral-gray-4">
                 ذخیره
