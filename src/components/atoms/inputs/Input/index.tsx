@@ -87,30 +87,14 @@ InputContainer.displayName = "InputContainer";
 
 const Input = forwardRef<HTMLDivElement, InputProps>(
   (
-    {
-      disabled,
-      error,
-      onChange,
-      icon,
-      description,
-      placeholder,
-      size,
-      className,
-      name,
-      value,
-    },
+    { error, prefixIcon, suffixIcon, description, size, className, ...props },
     ref,
   ) => {
     const input = (
       <InputRoot ref={ref} error={!!error} size={size} className={className}>
-        {!!icon && <InputIcon>{icon}</InputIcon>}
-        <InputElement
-          disabled={disabled}
-          name={name}
-          value={value}
-          onChange={onChange}
-          placeholder={placeholder}
-        />
+        {!!prefixIcon && <InputIcon>{prefixIcon}</InputIcon>}
+        <InputElement {...props} />
+        {!!suffixIcon && <InputIcon>{suffixIcon}</InputIcon>}
       </InputRoot>
     );
 

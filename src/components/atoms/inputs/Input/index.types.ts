@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRefWithProps } from "@/types/utils";
 import { ComponentPropsWithoutRef, ReactNode } from "react";
-import { ArrayValues, Simplify } from "type-fest";
+import { ArrayValues, Merge, Simplify } from "type-fest";
 import { INPUT_SiZES } from "./index.constants";
 
 export type InputRootProps = ComponentPropsWithoutRefWithProps<
@@ -22,13 +22,10 @@ export type InputDescriptionProps = ComponentPropsWithoutRef<"p">;
 export type InputContainerProps = ComponentPropsWithoutRef<"div">;
 
 export type InputProps = Simplify<
-  Pick<
-    InputElementProps,
-    "value" | "onChange" | "placeholder" | "disabled" | "name"
-  > &
-    Pick<InputRootProps, "size" | "className"> & {
-      error?: boolean | string;
-      description?: string;
-      icon?: ReactNode;
-    }
+  Merge<InputElementProps, Pick<InputRootProps, "size" | "className">> & {
+    error?: boolean | string;
+    description?: string;
+    prefixIcon?: ReactNode;
+    suffixIcon?: ReactNode;
+  }
 >;
