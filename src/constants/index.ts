@@ -23,3 +23,12 @@ export const sidebarMenu = {
     },
   },
 };
+
+export const operator = {
+  mellat: "/images/operator/Mellat.png",
+  parsian: "/images/operator/Parsian.png",
+  pasargad: "/images/operator/Pasargad.png",
+  eghtesadNovin: "/images/operator/Eghtesad_Novin.png",
+  keshavarzi: "/images/operator/Keshavarzi.png",
+  maskan: "/images/operator/Maskan.png",
+};
