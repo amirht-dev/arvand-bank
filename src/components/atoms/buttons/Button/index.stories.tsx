@@ -1,8 +1,10 @@
 import { Bank_Outline } from "@/components/atoms/icons/Buildings/Bank";
 import type { Meta, StoryObj } from "@/types/storybook";
+import { T } from "@/utils/storybook";
 import Button from ".";
 import {
   BUTTON_COLORS,
+  BUTTON_KINDS,
   BUTTON_SIZES,
   BUTTON_VARIANTS,
 } from "./index.constants";
@@ -15,6 +17,7 @@ const meta = {
     variant: "fill",
     size: "md",
     children: "عنوان دکمه",
+    kind: "normal",
     prefixIcon: false,
     suffixIcon: false,
   },
@@ -46,7 +49,7 @@ const meta = {
       options: BUTTON_COLORS,
       table: {
         type: {
-          summary: BUTTON_COLORS.map((i) => `"${i}"`).join(" | "),
+          summary: T.union(...BUTTON_COLORS),
         },
       },
     },
@@ -55,7 +58,7 @@ const meta = {
       options: BUTTON_SIZES,
       table: {
         type: {
-          summary: BUTTON_SIZES.map((i) => `"${i}"`).join(" | "),
+          summary: T.union(...BUTTON_SIZES),
         },
       },
     },
@@ -64,7 +67,16 @@ const meta = {
       options: BUTTON_VARIANTS,
       table: {
         type: {
-          summary: BUTTON_VARIANTS.map((i) => `"${i}"`).join(" | "),
+          summary: T.union(...BUTTON_VARIANTS),
+        },
+      },
+    },
+    kind: {
+      control: "inline-radio",
+      options: BUTTON_KINDS,
+      table: {
+        type: {
+          summary: T.union(...BUTTON_KINDS),
         },
       },
     },
@@ -126,6 +138,20 @@ export const Text = {
   args: {
     ...WithIcons.args,
     variant: "text",
+  },
+} satisfies Story;
+
+export const Normal = {
+  args: {
+    ...Fill.args,
+    kind: "normal",
+  },
+} satisfies Story;
+
+export const Twotone = {
+  args: {
+    ...Fill.args,
+    kind: "twotone",
   },
 } satisfies Story;
 

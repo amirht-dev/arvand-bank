@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 import { ArrayValues } from "type-fest";
 import {
   BUTTON_COLORS,
+  BUTTON_KINDS,
   BUTTON_SIZES,
   BUTTON_VARIANTS,
 } from "./index.constants";
@@ -12,6 +13,7 @@ export type ButtonOwnProps = {
   variant?: ArrayValues<typeof BUTTON_VARIANTS>;
   color?: ArrayValues<typeof BUTTON_COLORS>;
   size?: ArrayValues<typeof BUTTON_SIZES>;
+  kind?: ArrayValues<typeof BUTTON_KINDS>;
   prefixIcon?: ReactNode;
   suffixIcon?: ReactNode;
 };
