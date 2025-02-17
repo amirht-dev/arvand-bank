@@ -1,14 +1,26 @@
 import { cn } from "@/utils/utils";
-import { ComponentPropsWithoutRef, forwardRef } from "react";
+import { forwardRef } from "react";
+import { DividerProps } from "./index.types";
 
-const Divider = forwardRef<HTMLDivElement, ComponentPropsWithoutRef<"div">>(
-  ({ className, ...props }, ref) => {
+const Divider = forwardRef<SVGSVGElement, DividerProps>(
+  ({ className, dashed = false, dashLength = 8, ...props }, ref) => {
     return (
-      <div
+      <svg
         {...props}
         ref={ref}
-        className={cn("h-px bg-neutral-gray-9", className)}
-      />
+        className={cn("h-0.5 w-full stroke-neutral-gray-6 stroke-1", className)}
+      >
+        <line
+          x1="0"
+          x2="100%"
+          y1="0"
+          y2="0"
+          strokeWidth="1px"
+          {...(dashed && {
+            strokeDasharray: dashLength,
+          })}
+        />
+      </svg>
     );
   },
 );
