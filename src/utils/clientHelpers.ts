@@ -1,4 +1,5 @@
 import "client-only";
+import html2canvas, { Options as HTML2CanvasOptions } from "html2canvas";
 import { type Context, createContext, useContext } from "react";
 
 type CreateCXTOptions = {
@@ -41,4 +42,18 @@ export function createCTX<TContext>(
     context,
     hook,
   };
+}
+
+export function getScreenshot(
+  element: HTMLElement,
+  options?: Partial<HTML2CanvasOptions>,
+) {
+  html2canvas(element, options).then((canvas) => {
+    const image = canvas.toDataURL("image/jpg");
+
+    const a = document.createElement("a");
+    a.href = image;
+    a.download = "receipt.jpg";
+    a.click();
+  });
 }
