@@ -2,13 +2,15 @@ import {
   Breadcrumb,
   BreadcrumbIcon,
   BreadcrumbItem,
+  BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/atoms/Breadcrumb";
 import Divider from "@/components/atoms/Divider";
-import { ClipboardListCheck_Outline } from "@/components/atoms/icons/Documents/ClipboardListCheck";
+import { ReceiptText_Outline } from "@/components/atoms/icons/ECommerce/ReceiptText";
 import { CoinCardTransfer_Outline } from "@/components/atoms/icons/Money&Payment/CoinCardTransfer";
+import { CreditCart_Outline } from "@/components/atoms/icons/Money&Payment/CreditCart";
 import { CreditCartChange_Outline } from "@/components/atoms/icons/Money&Payment/CreditCartChange";
 import { PageTitle, PageTitleIcon } from "@/components/molecules/PageTitle";
 import { Receipt, ReceiptItem } from "@/components/molecules/Receipt";
@@ -42,17 +44,19 @@ export default function PaymentTransferReceipt() {
           <BreadcrumbSeparator />
 
           <BreadcrumbItem>
-            <BreadcrumbIcon>
-              <CreditCartChange_Outline />
-            </BreadcrumbIcon>
-            انتقال وجه
+            <BreadcrumbLink href="/payment/transfer">
+              <BreadcrumbIcon>
+                <CreditCartChange_Outline />
+              </BreadcrumbIcon>
+              انتقال وجه
+            </BreadcrumbLink>
           </BreadcrumbItem>
 
           <BreadcrumbSeparator />
 
           <BreadcrumbItem>
             <BreadcrumbIcon>
-              <CreditCartChange_Outline />
+              <CreditCart_Outline />
             </BreadcrumbIcon>
             کارت
           </BreadcrumbItem>
@@ -62,9 +66,9 @@ export default function PaymentTransferReceipt() {
           <BreadcrumbItem>
             <BreadcrumbPage>
               <BreadcrumbIcon>
-                <ClipboardListCheck_Outline />
+                <ReceiptText_Outline />
               </BreadcrumbIcon>
-              تایید اطلاعات
+              رسید انتقال وجه
             </BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
