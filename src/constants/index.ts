@@ -25,10 +25,28 @@ export const sidebarMenu = {
 };
 
 export const operator = {
-  mellat: "/images/operator/Mellat.png",
-  parsian: "/images/operator/Parsian.png",
-  pasargad: "/images/operator/Pasargad.png",
-  eghtesadNovin: "/images/operator/Eghtesad_Novin.png",
-  keshavarzi: "/images/operator/Keshavarzi.png",
-  maskan: "/images/operator/Maskan.png",
+  mellat: {
+    persian: "ملت",
+    imageSrc: "/images/operator/Mellat.png",
+  },
+  parsian: {
+    persian: "پارسیان",
+    imageSrc: "/images/operator/Parsian.png",
+  },
+  pasargad: {
+    persian: "پاسارگاد",
+    imageSrc: "/images/operator/Pasargad.png",
+  },
+  eghtesadNovin: {
+    persian: "اقتصاد نوین",
+    imageSrc: "/images/operator/Eghtesad_Novin.png",
+  },
+  keshavarzi: {
+    persian: "کشاورزی",
+    imageSrc: "/images/operator/Keshavarzi.png",
+  },
+  maskan: {
+    persian: "مسکن",
+    imageSrc: "/images/operator/Maskan.png",
+  },
 };
