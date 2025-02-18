@@ -2,6 +2,7 @@ import {
   Breadcrumb,
   BreadcrumbIcon,
   BreadcrumbItem,
+  BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
@@ -9,6 +10,7 @@ import {
 import Button from "@/components/atoms/buttons/Button";
 import { ClipboardListCheck_Outline } from "@/components/atoms/icons/Documents/ClipboardListCheck";
 import { CoinCardTransfer_Outline } from "@/components/atoms/icons/Money&Payment/CoinCardTransfer";
+import { CreditCart_Outline } from "@/components/atoms/icons/Money&Payment/CreditCart";
 import { CreditCartChange_Outline } from "@/components/atoms/icons/Money&Payment/CreditCartChange";
 import { DollarSendCircle_Outline } from "@/components/atoms/icons/Money&Payment/DollarSendCircle";
 import { PageTitle, PageTitleIcon } from "@/components/molecules/PageTitle";
@@ -32,17 +34,19 @@ export default function PaymentTransferConfirm() {
           <BreadcrumbSeparator />
 
           <BreadcrumbItem>
-            <BreadcrumbIcon>
-              <CreditCartChange_Outline />
-            </BreadcrumbIcon>
-            انتقال وجه
+            <BreadcrumbLink href="/payment/transfer">
+              <BreadcrumbIcon>
+                <CreditCartChange_Outline />
+              </BreadcrumbIcon>
+              انتقال وجه
+            </BreadcrumbLink>
           </BreadcrumbItem>
 
           <BreadcrumbSeparator />
 
           <BreadcrumbItem>
             <BreadcrumbIcon>
-              <CreditCartChange_Outline />
+              <CreditCart_Outline />
             </BreadcrumbIcon>
             کارت
           </BreadcrumbItem>
@@ -83,7 +87,7 @@ export default function PaymentTransferConfirm() {
             <span>شماره کارت مقصد</span>
             <span className="flex items-center gap-2">
               <Image
-                src={operator.mellat}
+                src={operator.mellat.imageSrc}
                 alt="mellat bank"
                 width={20}
                 height={20}
