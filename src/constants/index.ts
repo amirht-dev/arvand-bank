@@ -20,6 +20,10 @@ export const sidebarMenu = {
         label: "انتقال وجه",
         href: "/payment/transfer",
       },
+      billingServices: {
+        label: "خدمات قبوض",
+        href: "/payment/billing-services",
+      },
     },
   },
 };

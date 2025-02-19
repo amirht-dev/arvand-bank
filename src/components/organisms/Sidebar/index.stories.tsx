@@ -45,3 +45,13 @@ export const PaymentTransfer = {
     },
   },
 } satisfies Story;
+
+export const PaymentBillingServices = {
+  parameters: {
+    nextjs: {
+      navigation: {
+        pathname: sidebarMenu.payment.items.billingServices.href,
+      },
+    },
+  },
+} satisfies Story;
