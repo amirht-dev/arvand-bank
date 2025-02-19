@@ -53,7 +53,7 @@ const Sidebar = () => {
                 </AccordionTrigger>
 
                 <AccordionContent className="mt-2 p-0" asChild>
-                  <ul className="list-inside list-disc bg-neutral-gray-11 p-4 ps-8">
+                  <ul className="list-inside list-disc space-y-3 bg-neutral-gray-11 p-4 ps-8">
                     {Object.values(item.items).map((subItem) => (
                       <li key={subItem.label}>
                         <NavLink
